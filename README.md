@@ -1,110 +1,130 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Project 1: Personal Coach - Giovanni Sanchez
 
-Welcome USER_NAME,
+Personal Coach - Giovanni Sanchez is a site created for my personal life coach. It is expected to provide a better digital presentation and online footprint of my coach as well as a digital contact point for potential new customers. Sometimes we need help to achieve our next goals, but we do not know where to go, well, this site will be one place where you can get to meet a person that can provides you this support.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive Mockup](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Am-I-Responsive-PP1-DiegoCardenas.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+## User Stories
+- As a **user** I want to **view the about page** so that I can **learn more about the coach**
+- As a **user** I want to **navigate the page** so that I can **see more information about the coach**
+- As a **user** I want to **see a picture of the coach** so that I can **feel closer to the person that will provide me support**
+- As a **user** I want to **see some certificates of the coach** so that I can **feel more confident of his knowledge**
+- As a **user** I want to **have access to his linked-in profile** so that I can **see his publications**
+- As a **user** I want to **fill out a contact form** so that I can **get contacted by the coach**
+- As a **user** I want to **see a confirmation message** so that I can **make sure that my contact form has been received**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Wireframes
 
-`python3 -m http.server`
+__Home__  
 
-A blue button should appear to click: _Make Public_,
+![Landing Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/wireframe_home.png)
 
-Another blue button should appear to click: _Open Browser_.
+__About__  
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![About Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/wireframe-about.png)
 
-A blue button should appear to click: _Make Public_,
+__Contact__  
 
-Another blue button should appear to click: _Open Browser_.
+![Contact Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/wireframe_contact.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Features
 
-To log into the Heroku toolbelt CLI:
+### Existing Features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __Navigation Bar__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - Featured on all three pages, the full responsive navigation bar includes links to the Home page, About and Contact page and is identical in each page to allow for easy navigation.
+  - This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
 
-------
+![Navigation Bar](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/NavigationBar-PP1-DiegoCardenas.png)
 
-## Release History
+![Navigation Bar For Mobile](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/NavigationBarForMobile-PP1-DiegoCardenas.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- __The landing page image__
 
-**September 20 2023:** Update Python version to 3.9.17.
+  - The landing includes a photograph with text overlay to allow the user to watch one conference of the coach. 
+  - This section introduces the user to Giovanni Sanchez with a nice intro message.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Landing Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/LandingPage-PP1-DiegoCardenas.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- __About page__
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  - This page allows users to learn more about Giovanni and his certifications  
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![About Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/About-PP1-DiegoCardenas.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- __Contact Form__
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  - This page will allow the user to send a contact form directly to the coach. The user will be asked to submit their full name and email address.  
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Contact Form](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Bug-PP1-DiegoCardenas.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- __The Footer__ 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  - The footer section includes links to LinkedIN and a mailto feature to send a direct message to Giovanni. The links will open to a new tab to allow easy navigation for the user. 
+  - The footer is valuable to the user as it encourages them to keep connected via social media.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Footer](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/FooterWithContactInformation-PP1-DiegoCardenas.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Features Left to Implement
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- NA
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Testing
 
-------
+### Validator Testing 
 
-## FAQ about the uptime script
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?)
+- Lighthouse
+  - The result given by the system for the lighthouse assessment is the following:
+![Lighthouse results](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Lighthouse-PP1-DiegoCardenas.png)
 
-**Why have you added this script?**
+### Unfixed Bugs
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Inside the contact section, there are white areas on top and bottom of the background image. The idea is to fix it so that it can cover the whole area. This happens specially with mobile devices with a very considerable height (670px and more) 
 
-**How will this affect me?**
+![Contact Form BUG](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Bug-PP1-DiegoCardenas.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## Deployment 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The live link can be found here - https://diegocardenast.github.io/project1-personal-coach/
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Credits
 
-**Can I opt out?**
+### Content 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Good/Best practice on the readme were shared by Lauren-Nicole Popich in her [mentoring](https://github.com/CluelessBiker/mentoring/tree/main) GitHub repositry
+- The text for the Home page and the About was provided by the customer. In Spanish and then translated into English using [DeepL](https://www.deepl.com/de/translator#es/en) 
+- Use of stackoverflow to insert a line break inside the [mailto feature](https://stackoverflow.com/questions/22765834/insert-a-line-break-in-mailto-body)
+- Mailto tutorial provided by [Simplilearn](https://www.simplilearn.com/tutorials/html-tutorial/html-mailto)
+- Colors Palette Generated with [coolors.co](https://coolors.co/) using as base the HEX color (#1875a0)  provided by the customer on this page
+- Use of leadmonk to create the [email template (template 21)](https://www.leadmonk.io/post/14-email-templates-to-ask-for-a-meeting-politely) for the mailto feature
+- Use of Google to import [Google fonts](https://fonts.google.com/?classification=Display) 
+- Creation of a transparency of the color pallette using [hexcolortool.com](https://www.hexcolortool.com/#ff42ad,0.5)
+- Inspiration of content and structure seen inside the [Code Institute Love Running Project](https://diegocardenast.github.io/Love-running-ci/index.html) and the page of [Maggie Edwards](https://maggieedwards.com/)
+- 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Media
 
-**Anything more?**
+- The photos used on the home and about were provided directly by the customer (All rights reserved)
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The use of the icons was provided by [Flaticon](https://www.flaticon.com/free-icon/planet-earth_1598431?related_id=1598196&origin=search)
+- The resizing and conversion of icons was provided by [Favicon](https://favicon.io/favicon-converter/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+Thank You!
 
-Happy coding!
+Diego Enrique Cárdenas Tabares  
+Code Institute Student  
+Diploma in Full Stack Software Development  
