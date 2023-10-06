@@ -1,6 +1,6 @@
-# Project 1: Personal Coach - Giovanni Sanchez
+# Project 2: ESG basics quiz
 
-Personal Coach - Giovanni Sanchez is a site created for my personal life coach. It is expected to provide a better digital presentation and online footprint of my coach as well as a digital contact point for potential new customers. Sometimes we need help to achieve our next goals, but we do not know where to go, well, this site will be one place where you can get to meet a person that can provides you this support.
+ESG basics quiz is a web app that can teach to new colleagues in companies commited with the ESG Framework, how this one works and what it stands for. The web app allows you to select the number of questions, answer MCO questions and check right away the correct answer. At the end of the quiz, the user will receive the final score with an approved or Fail percentage.
 
 ![Responsive Mockup](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Am-I-Responsive-PP1-DiegoCardenas.png)
 
