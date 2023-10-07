@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,700&family=Roboto:wght@300;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Generic project styles */
+    color: #3C4043;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    color: #3C4043;
+    text-transform: capitalize;
+}
+
+h2 {
+
+    color: #3C4043;
+
+}
+
+h3 {
+    color: #3C4043;
+}
+
+.hidden-heading {
+    display: none;
+}
+
+
+/* Header section */
+
+.header {
+    background-color: #ffffff;
+    padding: 3%;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    /*box-shadow: 0 2px 2px #3a3a3a;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.header a,
+.header h1,
+.header h2,
+.header h3 {
+    text-decoration: none;
+    color: #3C4043;
+}
+
+/*Size of the Logo for Mobile version*/
+.header {
+    font-size: 80%;
+}
+
+.logo {
+    text-align: right;
+}
+
+.logo-img {
+    width: 40%;
+}
+
+/* Navbar styles with dropdown toggle */
+.navigation-bar {
+    font-size: 110%;
+    letter-spacing: 1px;
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    /*box-shadow: 0 2px 2px #3a3a3a;*/
+    display: none;
+    top: 100%;
+}
+
+.navigation-bar>a {
+    margin-bottom: 1em;
+    width: fit-content;
+}
+
+.active {
+    border-bottom: 1px solid #3C4043;
+}
+
+/* Navigation toggle */
+#nav-toggle:checked~.navigation-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 1.5rem;
+}
+
+
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+
+
+    /* Navigation bar */
+    .header {
+        padding: 1%;
+    }
+
+    .header .logo {
+        font-size: 100%;
+        line-height: 75px;
+        margin: 0 0.5rem;
+    }
+
+    .navigation-bar {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    .navigation-bar>a {
+        display: flex;
+        width: fit-content;
+        margin-right: 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+}
+
+    /* Media query: laptops and larger (992px and up) */
+    @media screen and (min-width: 992px) {
+        .navigation-bar a:hover {
+            border-bottom: 1px solid #1967D2;
+        }
+
+    }
