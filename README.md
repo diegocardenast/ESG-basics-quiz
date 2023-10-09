@@ -121,6 +121,7 @@ The live link can be found here - https://diegocardenast.github.io/project1-pers
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 - The use of the icons was provided by [Flaticon](https://www.flaticon.com/free-icon/planet-earth_1598431?related_id=1598196&origin=search)
 - The resizing and conversion of icons was provided by [Favicon](https://favicon.io/favicon-converter/)
+- The welcome image was created by T Leish and taken from [Pexels](https://www.pexels.com/es-es/foto/astronauta-sosteniendo-la-tierra-5258243/)
 
 
 Thank You!

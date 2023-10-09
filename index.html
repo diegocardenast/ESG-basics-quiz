@@ -27,13 +27,13 @@
 <body>
     <!-- Header -->
     <header class="header">
-        
+
         <!-- Hamburger button -->
         <input type="checkbox" id="nav-toggle" name="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
             <i class="fa-solid fa-bars" style="color: #3C4043;"></i>
         </label>
-        
+
         <!-- Navigation bar -->
         <div class="navigation-bar">
             <a href="index.html" class="active">Game</a>
@@ -43,25 +43,49 @@
 
         <!-- Logo -->
         <h1 class="logo"><a href="index.html">
-            <img class="logo-img" href="index.html" src="assets/images/esg-quiz-logo.png" alt="logo">
-        </a></h1>
-        
+                <img class="logo-img" href="index.html" src="assets/images/esg-quiz-logo.png" alt="logo">
+            </a></h1>
+
     </header>
 
     <!-- Main -->
     <main>
-        <div class="game-area">
+        <div class="game-area1">
             <div class="image-area">
-                <img class="game-logo" href="index.html" src="assets/images/esg-quiz-logo-blue-background.png" alt="logo-blue-background">
+                <img class="game-logo" href="index.html" src="assets/images/esg-quiz-logo-blue-background.png"
+                    alt="logo-blue-background">
             </div>
             <div class="info-area">
                 <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
                 <p>Learn the basics of the ESG framework with this fun and interactive trivia game.</p>
             </div>
             <div class="control-area">
-                <span class="start-button"><a href="game.html">Start Game</a></span>
-            </a>
+                <span class="start-button">Start Game</span>
+                </a>
+            </div>
         </div>
+
+        <div class="game-area2">
+            <div class="info-area">
+                <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
+                <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
+                    alt="astronaut-greeting">
+                <p>Please select the # of questions:</p>
+                <form action="#">
+                    <select name="number-questions" id="quests">
+                        <option value="select-option"># of questions</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </form>
+            </div>
+            <div class="control-area">
+                <span class="go-button">Let's go</span>
+            </div>
+        </div>
+
     </main>
 
     <!-- Font Awesome kit -->
