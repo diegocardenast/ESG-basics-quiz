@@ -308,7 +308,7 @@ function showQuestions(num1) {
 }
 
 /**
- * It assign event listeners to buttons and checks the answer from the user with the correct one saved in the array 
+ * It assigns event listeners to buttons and checks the answer from the user with the correct one saved in the array 
  */
 function checkAnswer() {
     checkControl = 1;
@@ -337,7 +337,9 @@ function checkAnswer() {
     
 }
 
-
+/**
+ * It shows the second question onwards in the DOM 
+ */
 function nextQuestion() {
 
     let questionScreen = document.getElementsByClassName("game-questions-area");
