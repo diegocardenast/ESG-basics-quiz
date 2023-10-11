@@ -299,21 +299,6 @@ function showQuestions(num1) {
 
         console.log("question printed. Our current question is " + currentPosition + 1); //control log
 
-    } else {
-        questionScreen.innerHTML = `
-            <div class="question-area">
-                <h1 class="question-number">Question ${assignedQuestions.length} of ${assignedQuestions.length}</h1>
-                <p>${assignedQuestions[currentPosition].questionText}</p>
-            </div>
-            <div class="answer-area">
-                <span class="answer-option">${assignedQuestions[currentPosition].option1}</span>
-                <span class="answer-option">${assignedQuestions[currentPosition].option2}</span>
-                <span class="answer-option">${assignedQuestions[currentPosition].option3}</span>
-                <span class="answer-option">${assignedQuestions[currentPosition].option4}</span>
-            </div>
-            <div class="control-area">
-                <span class="next-question">Submit</span>
-            </div>`;
     };
 
     document.getElementsByClassName("score-bar")[0].style.display = "flex";
