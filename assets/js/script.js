@@ -269,13 +269,13 @@ function assignQuestions(operand1) {
      * It shows the question screen
     */
     document.getElementsByClassName("game-questions-area")[0].style.display = "flex";
-    showQuestions(0);
+    showFirstQuestion(0);
 };
 
 /**
- * It shows the first question of the assignedQuestions in the DOM 
+ * It shows in the DOM the first question of the assignedQuestions array 
  */
-function showQuestions(num1) {
+function showFirstQuestion(num1) {
 
     console.log(num1); //control log of the input for the function
 
@@ -286,7 +286,7 @@ function showQuestions(num1) {
     if (num1 < assignedQuestions.length) {
         questionScreen[0].innerHTML = `
             <div class="question-area">
-                <h1 class="question-number">Question ${currentPosition+1} of ${assignedQuestions.length}</h1>
+                <h1 class="question-number">Question 1 of ${assignedQuestions.length}</h1>
                 <p>${assignedQuestions[currentPosition].questionText}</p>
             </div>
             <div class="answer-area">
@@ -294,12 +294,9 @@ function showQuestions(num1) {
                 <span class="answer-option">${assignedQuestions[currentPosition].option2}</span>
                 <span class="answer-option">${assignedQuestions[currentPosition].option3}</span>
                 <span class="answer-option">${assignedQuestions[currentPosition].option4}</span>
-            </div>
-            <div class="control-area">
-                <span class="next-question">Next</span>
             </div>`;
 
-        console.log("question printed. Our current question is " + 1); //control log
+        console.log("question printed. Our current question is " + 1); //control log of in which questio we are
 
     };
 
@@ -314,46 +311,57 @@ function showQuestions(num1) {
  * It assigns event listeners to buttons and checks the answer from the user with the correct one saved in the array 
  */
 function checkAnswer() {
-    checkControl = 1;
-    console.log(buttons); //control log
+    console.log(buttons); //control log of the buttons
+    /**
+     * Adds event listeners to all the answer buttons
+     */
     for (let button of buttons) {
-        button.addEventListener("click", function () {
-            console.log(this.innerText);
-            console.log(assignedQuestions[currentPosition].correctAnswer);
+        button.addEventListener("click", function showCorrectAnswer(){
+            
+            console.log(this.innerText); //control log of the selected answer
+            console.log(assignedQuestions[currentPosition].correctAnswer); //control log of the correct answer
+            /**
+             * It paints of green the answer button if the answer is correct
+             */
             if (this.value === assignedQuestions[currentPosition].correctAnswer) {
                 this.style.backgroundColor = "#6A971B";
-            
+                console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
+                alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                nextQuestion();  
+            /**
+             * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
+             */
             } else {
                 score = score - (100 / assignedQuestions.length);
                 this.style.backgroundColor = "#B1106B";
 
                 for (i = 0; i < 4; i++) {
-                    console.log(document.getElementsByClassName("answer-option")[i].innerText); //control log
-                    console.log(assignedQuestions[currentPosition].correctAnswer); //control log
                     if (document.getElementsByClassName("answer-option")[i].innerText === assignedQuestions[currentPosition].correctAnswer) {
                         document.getElementsByClassName("answer-option")[i].style.backgroundColor = "#6A971B";
                     }
                 }
-                
-            };
-
-    
-
-            console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log
-            currentPosition++;
-        })
-    }
-}
-
+                console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
+                alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                nextQuestion();
+            }
+                   
+        });     
+    };
+};
 /**
  * It shows the second question onwards in the DOM 
  */
 function nextQuestion() {
 
+    currentPosition++; //it helps to move into the next question
+
     let questionScreen = document.getElementsByClassName("game-questions-area");
     //Score updates on screen
     document.getElementsByClassName("score-bar")[0].innerText = `Score: ${score}%`;
 
+    /**
+     * It prints the next question (if it is not the last one)
+     */
     if (currentPosition < assignedQuestions.length) {
         questionScreen[0].innerHTML = `
             <div class="question-area">
@@ -365,141 +373,162 @@ function nextQuestion() {
                 <span class="answer-option">${assignedQuestions[currentPosition].option2}</span>
                 <span class="answer-option">${assignedQuestions[currentPosition].option3}</span>
                 <span class="answer-option">${assignedQuestions[currentPosition].option4}</span>
-            </div>
-            <div class="control-area">
-                <span class="next-question">Next</span>
             </div>`;
 
         console.log(`question printed. Our current question is ${currentPosition+1}`); //control log
-        checkControl = 0;
 
-        console.log(buttons); //control log
+        console.log(buttons); //control log of the buttons
+        /**
+        * Adds event listeners to all the answer buttons
+        */
         for (let button of buttons) {
-            button.addEventListener("click", function () {
-                console.log(this.innerText);
-                console.log(assignedQuestions[currentPosition].correctAnswer);
+            button.addEventListener("click", function showCorrectAnswer(){
+            
+                console.log(this.innerText); //control log of the selected answer
+                console.log(assignedQuestions[currentPosition].correctAnswer); //control log of the correct answer
+                /**
+                 * It paints of green the answer button if the answer is correct
+                 */
                 if (this.value === assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
+                    console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
+                    alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                    nextQuestion();  
+                /**
+                 * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
+                 */
                 } else {
                     score = score - (100 / assignedQuestions.length);
                     this.style.backgroundColor = "#B1106B";
+
                     for (i = 0; i < 4; i++) {
                         if (document.getElementsByClassName("answer-option")[i].innerText === assignedQuestions[currentPosition].correctAnswer) {
                             document.getElementsByClassName("answer-option")[i].style.backgroundColor = "#6A971B";
                         }
                     }
-                };
-            });
+                    console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
+                    alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                    nextQuestion();
+                }
+                    
+            });     
         };
-
-        document.getElementsByClassName("next-question")[0].addEventListener("click", function () {
-            console.log("Next button test");
-            if (checkControl === 0) {
-                checkAnswer();
-            }
-            nextQuestion();
-        });
 
     } else if (currentPosition + 1 === assignedQuestions.length) {
-        questionScreen.innerHTML = `
-            <div class="question-area">
-                <h1 class="question-number">Question ${assignedQuestions.length} of ${assignedQuestions.length}</h1>
-                <p>${assignedQuestions[currentPosition].questionText}</p>
-            </div>
-            <div class="answer-area">
-                <span class="answer-option">${assignedQuestions[currentPosition].option1}</span>
-                <span class="answer-option">${assignedQuestions[currentPosition].option2}</span>
-                <span class="answer-option">${assignedQuestions[currentPosition].option3}</span>
-                <span class="answer-option">${assignedQuestions[currentPosition].option4}</span>
-            </div>
-            <div class="control-area">
-                <span class="submit">Submit</span>
-            </div>`;
+        questionScreen[0].innerHTML = `
+        <div class="question-area">
+            <h1 class="question-number">Question ${currentPosition+1} of ${assignedQuestions.length}</h1>
+            <p>${assignedQuestions[currentPosition].questionText}</p>
+        </div>
+        <div class="answer-area">
+            <span class="answer-option">${assignedQuestions[currentPosition].option1}</span>
+            <span class="answer-option">${assignedQuestions[currentPosition].option2}</span>
+            <span class="answer-option">${assignedQuestions[currentPosition].option3}</span>
+            <span class="answer-option">${assignedQuestions[currentPosition].option4}</span>
+        </div>`;
 
-        console.log(buttons); //control log
+        console.log(`question printed. Our current question is ${currentPosition+1}`); //control log
+
+        console.log(buttons); //control log of the buttons
+    
+        /**
+        * Adds event listeners to all the answer buttons
+        */
         for (let button of buttons) {
-            button.addEventListener("click", function () {
-                console.log(this.innerText);
-                console.log(assignedQuestions[currentPosition].correctAnswer);
+            button.addEventListener("click", function showCorrectAnswer(){
+            
+                console.log(this.innerText); //control log of the selected answer
+                console.log(assignedQuestions[currentPosition].correctAnswer); //control log of the correct answer
+                /**
+                 * It paints of green the answer button if the answer is correct
+                 */
                 if (this.value === assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
+                    console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
+                    alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                    finishGame();  
+                /**
+                 * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
+                 */
                 } else {
                     score = score - (100 / assignedQuestions.length);
                     this.style.backgroundColor = "#B1106B";
+
                     for (i = 0; i < 4; i++) {
                         if (document.getElementsByClassName("answer-option")[i].innerText === assignedQuestions[currentPosition].correctAnswer) {
                             document.getElementsByClassName("answer-option")[i].style.backgroundColor = "#6A971B";
                         }
                     }
-                };
-            });
+                    console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
+                    alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                    finishGame();
+                }      
+            });     
         };
-        checkControl = 0;
-
-        document.getElementsByClassName("submit")[0].addEventListener("click", function () {
-            if (checkControl === 0) {
-                checkAnswer();
-                finishGame();
-            } else {
-                finishGame();
-            }
-
-        });
-
     };
 }
 
 function finishGame() {
     console.log(`Game finished. Score: ${score}%`);
 
-    document.getElementsByClassName("final-area")[0].style.display = "none";
+    document.getElementsByClassName("game-questions-area")[0].style.display = "none";
     document.getElementsByClassName("final-area")[0].style.display = "flex";
 
+    let finalScreen = document.getElementsByClassName("final-area");
+
     if(score>=70){
-        questionScreen[0].innerHTML = `
-        <div class="info-area">
-            <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
-            <h1 class="index-title"><a href="index.html">Congratulations!</a></h1>
-            
-            <p>You are becoming an ESG expert. You approved the quiz with a score of</p>
-            <!-- Score -->
-            <div class="final-score">
-                <p>${score}%</p>
+        finalScreen[0].innerHTML = `
+            <div class="info-area">
+                <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
+                <h1 class="index-title"><a href="index.html">Congratulations!</a></h1>
+                
+                <p>You are becoming an ESG expert. You approved the quiz with a score of</p>
+                <!-- Score -->
+                <div class="final-score">
+                    <p>${score}%</p>
+                </div>
+                <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
+                    alt="astronaut-greeting">
+                
             </div>
-            <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
-                alt="astronaut-greeting">
-            
-        </div>
-        <div class="control-area">
-            <span class="Finish">Finish</span>
-        </div>`;
+            <div class="control-area">
+                <span class="Finish">Finish</span>
+            </div>`;
     }else{
-        questionScreen[0].innerHTML = `
-        <div class="info-area">
-            <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
-            <h1 class="index-title"><a href="index.html">That was close!</a></h1>
-            
-            <p>It did not work this time :( Keep trying and you will master this test. Your score is</p>
-            <!-- Score -->
-            <div class="final-score">
-                <p>${score}%</p>
+        finalScreen[0].innerHTML = `
+            <div class="info-area">
+                <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
+                <h1 class="index-title"><a href="index.html">That was close!</a></h1>
+                
+                <p>It did not work this time :( Keep trying and you will master this test. Your score is</p>
+                <!-- Score -->
+                <div class="final-score">
+                    <p>${score}%</p>
+                </div>
+                <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
+                    alt="astronaut-greeting">
+                
             </div>
-            <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
-                alt="astronaut-greeting">
-            
-        </div>
-        <div class="control-area">
-            <span class="Finish">Finish</span>
-        </div>`;
+            <div class="control-area">
+                <span class="finish">Finish</span>
+            </div>`;
     }
     
 
     document.getElementsByClassName("score-bar")[0].style.display = "none";
 
-    
-
     console.log("Final screen appears");
 
-    let questionScreen = document.getElementsByClassName("final-area");
+    let finishButton = document.getElementsByClassName("finish");
+
+    finishButton[0].addEventListener("click", function (){
+        window.location.href = "index.html";
+    });
+
+    
+
+    
+
+    
 
 }
