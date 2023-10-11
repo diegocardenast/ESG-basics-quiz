@@ -1,55 +1,48 @@
-//Loads the second screen in the DOM to select the number of questions to play
-document.getElementsByClassName("start-button")[0].addEventListener("click", function () {
-
+/**
+ * Loads the second screen in the DOM to select the number of questions to play once the start button is clicked
+*/
+document.getElementsByClassName("start-button")[0].addEventListener("click", function(){
     document.getElementsByClassName("game-area1")[0].style.display = "none";
     document.getElementsByClassName("game-area2")[0].style.display = "flex";
     console.log("Screen1 changes to screen2");
-
 });
 
-//Checks the question amount. Takes the question amount and hides the second screen
+/**
+ * Checks the question amount selected by the user and hides the second screen
+*/
 document.getElementsByClassName("go-button")[0].addEventListener("click", function () {
-
     let numQuestions;
-
     numQuestions = parseInt(document.getElementById("quests").value);
 
-    if (numQuestions === 5) {
+    if (numQuestions === 5 || numQuestions === 10 || numQuestions === 15 || numQuestions === 20) {
         console.log(numQuestions);
         document.getElementsByClassName("game-area2")[0].style.display = "none";
         console.log("screen2 changes to first question");
-        assignQuestions(numQuestions);
-    } else if (numQuestions === 10) {
-        console.log(numQuestions);
-        document.getElementsByClassName("game-area2")[0].style.display = "none";
-        console.log("screen2 changes to first question");
-        assignQuestions(numQuestions);
-    } else if (numQuestions === 15) {
-        console.log(numQuestions);
-        document.getElementsByClassName("game-area2")[0].style.display = "none";
-        console.log("screen2 changes to first question");
-        assignQuestions(numQuestions);
-    } else if (numQuestions === 20) {
-        console.log(numQuestions);
-        document.getElementsByClassName("game-area2")[0].style.display = "none";
-        console.log("screen2 changes to question screen");
         assignQuestions(numQuestions);
     } else {
         alert(`Please select a valid number`)
     }
-
-
 });
 
-//Declaring a global array with the assigned questions for the game
+/**
+ * Declaring a global array with the assigned questions for the game
+*/
 const assignedQuestions = new Array();
-//Declaring a number that tells in which question the user is
+/**
+ * Declaring a number that tells in which question the user is
+*/
 let currentPosition = 0;
-// Declaring answer buttons
+/** 
+ * Declaring answer buttons
+*/
 let buttons;
-//Declaring score variable
+/**
+ * Declaring score variable
+*/
 let score = 100;
-//Declaring check answer control
+/**
+ * Declaring check answer control
+*/
 let checkControl = 0;
 
 /**
@@ -57,7 +50,9 @@ let checkControl = 0;
  * and randomly assign them from an Array of questions.
  */
 function assignQuestions(operand1) {
-    //Array of objects holding all the trivia questions
+    /**
+     * Array of objects holding all the trivia questions
+    */
     const questions = [
         //1
         {
@@ -246,7 +241,9 @@ function assignQuestions(operand1) {
     let x;
     console.log(operand1); //control log
 
-    //It provides random numbers that can be used to select the questions from the questions array and do not reapeat
+    /**
+     * It provides random numbers that can be used to select the questions from the questions array and do not reapeat
+    */
     for (let i = 0; i < operand1; i++) {
 
         do {
@@ -256,26 +253,31 @@ function assignQuestions(operand1) {
         assignedNums.push(randomNum);
     };
 
-    console.log(assignedNums); //control log
+    console.log(assignedNums); //control log assigned random numbers
 
-    //It assigns the selected questions into an array called assignedQuestions
+    /**
+     * It assigns into the assignedQuestions array the questions selected with the random numbers
+    */
     for (let y = 0; y < assignedNums.length; y++) {
         x = assignedNums[y];
         assignedQuestions.push(questions[x]);
     }
 
-    console.log(assignedQuestions); //control log
-    //It shows the question screen
+    console.log(assignedQuestions); //control log assigned random questions
+    
+    /**
+     * It shows the question screen
+    */
     document.getElementsByClassName("game-questions-area")[0].style.display = "flex";
     showQuestions(0);
 };
 
 /**
- * It takes a number to insert it in the array of assignedQuestions and starts showing it in the DOM 
+ * It shows the first question of the assignedQuestions in the DOM 
  */
 function showQuestions(num1) {
 
-    console.log(num1); //control log
+    console.log(num1); //control log of the input for the function
 
     let questionScreen = document.getElementsByClassName("game-questions-area");
 
@@ -297,12 +299,13 @@ function showQuestions(num1) {
                 <span class="next-question">Next</span>
             </div>`;
 
-        console.log("question printed. Our current question is " + currentPosition + 1); //control log
+        console.log("question printed. Our current question is " + 1); //control log
 
     };
 
     document.getElementsByClassName("score-bar")[0].style.display = "flex";
     buttons = document.getElementsByClassName("answer-option");
+
     checkAnswer();
 
 }
@@ -319,22 +322,27 @@ function checkAnswer() {
             console.log(assignedQuestions[currentPosition].correctAnswer);
             if (this.value === assignedQuestions[currentPosition].correctAnswer) {
                 this.style.backgroundColor = "#6A971B";
+            
             } else {
                 score = score - (100 / assignedQuestions.length);
                 this.style.backgroundColor = "#B1106B";
+
                 for (i = 0; i < 4; i++) {
+                    console.log(document.getElementsByClassName("answer-option")[i].innerText); //control log
+                    console.log(assignedQuestions[currentPosition].correctAnswer); //control log
                     if (document.getElementsByClassName("answer-option")[i].innerText === assignedQuestions[currentPosition].correctAnswer) {
                         document.getElementsByClassName("answer-option")[i].style.backgroundColor = "#6A971B";
                     }
                 }
+                
             };
 
-            currentPosition++;
+    
+
             console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log
-            nextQuestion();
+            currentPosition++;
         })
     }
-    
 }
 
 /**
@@ -362,17 +370,37 @@ function nextQuestion() {
                 <span class="next-question">Next</span>
             </div>`;
 
-        console.log("question printed. Our current question is " + currentPosition + 1); //control log
+        console.log(`question printed. Our current question is ${currentPosition+1}`); //control log
         checkControl = 0;
 
-        document.getElementsByClassName("next-question")[0].addEventListener("click",function(){
-            if(checkControl===0){
+        console.log(buttons); //control log
+        for (let button of buttons) {
+            button.addEventListener("click", function () {
+                console.log(this.innerText);
+                console.log(assignedQuestions[currentPosition].correctAnswer);
+                if (this.value === assignedQuestions[currentPosition].correctAnswer) {
+                    this.style.backgroundColor = "#6A971B";
+                } else {
+                    score = score - (100 / assignedQuestions.length);
+                    this.style.backgroundColor = "#B1106B";
+                    for (i = 0; i < 4; i++) {
+                        if (document.getElementsByClassName("answer-option")[i].innerText === assignedQuestions[currentPosition].correctAnswer) {
+                            document.getElementsByClassName("answer-option")[i].style.backgroundColor = "#6A971B";
+                        }
+                    }
+                };
+            });
+        };
+
+        document.getElementsByClassName("next-question")[0].addEventListener("click", function () {
+            console.log("Next button test");
+            if (checkControl === 0) {
                 checkAnswer();
             }
-                nextQuestion();
+            nextQuestion();
         });
 
-    } else if(currentPosition+1===assignedQuestions.length) {
+    } else if (currentPosition + 1 === assignedQuestions.length) {
         questionScreen.innerHTML = `
             <div class="question-area">
                 <h1 class="question-number">Question ${assignedQuestions.length} of ${assignedQuestions.length}</h1>
@@ -387,14 +415,32 @@ function nextQuestion() {
             <div class="control-area">
                 <span class="submit">Submit</span>
             </div>`;
-        
+
+        console.log(buttons); //control log
+        for (let button of buttons) {
+            button.addEventListener("click", function () {
+                console.log(this.innerText);
+                console.log(assignedQuestions[currentPosition].correctAnswer);
+                if (this.value === assignedQuestions[currentPosition].correctAnswer) {
+                    this.style.backgroundColor = "#6A971B";
+                } else {
+                    score = score - (100 / assignedQuestions.length);
+                    this.style.backgroundColor = "#B1106B";
+                    for (i = 0; i < 4; i++) {
+                        if (document.getElementsByClassName("answer-option")[i].innerText === assignedQuestions[currentPosition].correctAnswer) {
+                            document.getElementsByClassName("answer-option")[i].style.backgroundColor = "#6A971B";
+                        }
+                    }
+                };
+            });
+        };
         checkControl = 0;
 
-        document.getElementsByClassName("submit")[0].addEventListener("click",function(){
-            if(checkControl===0){
+        document.getElementsByClassName("submit")[0].addEventListener("click", function () {
+            if (checkControl === 0) {
                 checkAnswer();
                 finishGame();
-            }else{
+            } else {
                 finishGame();
             }
 
@@ -405,5 +451,55 @@ function nextQuestion() {
 
 function finishGame() {
     console.log(`Game finished. Score: ${score}%`);
-}
 
+    document.getElementsByClassName("final-area")[0].style.display = "none";
+    document.getElementsByClassName("final-area")[0].style.display = "flex";
+
+    if(score>=70){
+        questionScreen[0].innerHTML = `
+        <div class="info-area">
+            <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
+            <h1 class="index-title"><a href="index.html">Congratulations!</a></h1>
+            
+            <p>You are becoming an ESG expert. You approved the quiz with a score of</p>
+            <!-- Score -->
+            <div class="final-score">
+                <p>${score}%</p>
+            </div>
+            <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
+                alt="astronaut-greeting">
+            
+        </div>
+        <div class="control-area">
+            <span class="Finish">Finish</span>
+        </div>`;
+    }else{
+        questionScreen[0].innerHTML = `
+        <div class="info-area">
+            <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
+            <h1 class="index-title"><a href="index.html">That was close!</a></h1>
+            
+            <p>It did not work this time :( Keep trying and you will master this test. Your score is</p>
+            <!-- Score -->
+            <div class="final-score">
+                <p>${score}%</p>
+            </div>
+            <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
+                alt="astronaut-greeting">
+            
+        </div>
+        <div class="control-area">
+            <span class="Finish">Finish</span>
+        </div>`;
+    }
+    
+
+    document.getElementsByClassName("score-bar")[0].style.display = "none";
+
+    
+
+    console.log("Final screen appears");
+
+    let questionScreen = document.getElementsByClassName("final-area");
+
+}

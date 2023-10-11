@@ -122,6 +122,7 @@ h3 {
 
 .score-bar p{
     font-weight: bold;
+    font-size: medium;
 }
 
 /* Main area */
@@ -322,6 +323,16 @@ select {
     padding: 3% 5% 3% 5%;
 }
 
+.final-area {
+    background-color: #CDDEF5;
+    border-radius: 10px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
 
 
 /* Media query: tablets and larger (768px and up) */
