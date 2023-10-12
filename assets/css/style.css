@@ -334,6 +334,33 @@ select {
     flex-grow: 1;
 }
 
+/* Footer */
+.footer {
+    background-color: #ffffff;
+  }
+  
+  .social-networks {
+    text-align: center;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  .social-networks a {
+    font-size: 110%;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #3C4043;
+  }
+  
+  .social-networks i {
+    font-size: 1.2rem;
+  }
+
+
+
+
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
