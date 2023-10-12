@@ -124,7 +124,8 @@ The live link can be found here - https://diegocardenast.github.io/project1-pers
 - The welcome image was created by T Leish and taken from [Pexels](https://www.pexels.com/es-es/foto/astronauta-sosteniendo-la-tierra-5258243/)
 - The congratulations image was created by Julian Jagtenberg and taken from [Pexels](https://www.pexels.com/es-es/foto/hombre-vestido-con-camisa-gris-de-pie-sobre-una-superficie-elevada-103123/)
 - The fail image was created by Pixabay and taken from [Pexels](https://www.pexels.com/es-es/foto/camino-gris-entre-pastos-276299/)
-
+Foto de Alena Koval: https://www.pexels.com/es-es/foto/la-mano-izquierda-de-la-persona-sosteniendo-una-planta-de-hoja-verde-886521/
+Foto de Yan Krukau: https://www.pexels.com/es-es/foto/oficina-feliz-sonriente-diversidad-8867482/
 
 
 Thank You!

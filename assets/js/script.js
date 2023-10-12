@@ -1,7 +1,7 @@
 /**
  * Loads the second screen in the DOM to select the number of questions to play once the start button is clicked
-*/
-document.getElementsByClassName("start-button")[0].addEventListener("click", function(){
+ */
+document.getElementsByClassName("start-button")[0].addEventListener("click", function () {
     document.getElementsByClassName("game-area1")[0].style.display = "none";
     document.getElementsByClassName("game-area2")[0].style.display = "flex";
     console.log("Screen1 changes to screen2");
@@ -9,7 +9,7 @@ document.getElementsByClassName("start-button")[0].addEventListener("click", fun
 
 /**
  * Checks the question amount selected by the user and hides the second screen
-*/
+ */
 document.getElementsByClassName("go-button")[0].addEventListener("click", function () {
     let numQuestions;
     numQuestions = parseInt(document.getElementById("quests").value);
@@ -26,23 +26,23 @@ document.getElementsByClassName("go-button")[0].addEventListener("click", functi
 
 /**
  * Declaring a global array with the assigned questions for the game
-*/
+ */
 const assignedQuestions = new Array();
 /**
  * Declaring a number that tells in which question the user is
-*/
+ */
 let currentPosition = 0;
 /** 
  * Declaring answer buttons
-*/
+ */
 let buttons;
 /**
  * Declaring score variable
-*/
+ */
 let score = 100;
 /**
  * Declaring check answer control
-*/
+ */
 let checkControl = 0;
 
 /**
@@ -52,7 +52,7 @@ let checkControl = 0;
 function assignQuestions(operand1) {
     /**
      * Array of objects holding all the trivia questions
-    */
+     */
     const questions = [
         //1
         {
@@ -243,7 +243,7 @@ function assignQuestions(operand1) {
 
     /**
      * It provides random numbers that can be used to select the questions from the questions array and do not reapeat
-    */
+     */
     for (let i = 0; i < operand1; i++) {
 
         do {
@@ -257,17 +257,17 @@ function assignQuestions(operand1) {
 
     /**
      * It assigns into the assignedQuestions array the questions selected with the random numbers
-    */
+     */
     for (let y = 0; y < assignedNums.length; y++) {
         x = assignedNums[y];
         assignedQuestions.push(questions[x]);
     }
 
     console.log(assignedQuestions); //control log assigned random questions
-    
+
     /**
      * It shows the question screen
-    */
+     */
     document.getElementsByClassName("game-questions-area")[0].style.display = "flex";
     showFirstQuestion(0);
 };
@@ -316,8 +316,8 @@ function checkAnswer() {
      * Adds event listeners to all the answer buttons
      */
     for (let button of buttons) {
-        button.addEventListener("click", function showCorrectAnswer(){
-            
+        button.addEventListener("click", function showCorrectAnswer() {
+
             console.log(this.innerText); //control log of the selected answer
             console.log(assignedQuestions[currentPosition].correctAnswer); //control log of the correct answer
             /**
@@ -326,11 +326,15 @@ function checkAnswer() {
             if (this.innerText === assignedQuestions[currentPosition].correctAnswer) {
                 this.style.backgroundColor = "#6A971B";
                 console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                setTimeout(function() {alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600)
-                setTimeout(function() {nextQuestion();},1000);  
-            /**
-             * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
-             */
+                setTimeout(function () {
+                    alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);
+                }, 600)
+                setTimeout(function () {
+                    nextQuestion();
+                }, 1000);
+                /**
+                 * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
+                 */
             } else {
                 score = score - (100 / assignedQuestions.length);
                 this.style.backgroundColor = "#B1106B";
@@ -341,11 +345,15 @@ function checkAnswer() {
                     }
                 }
                 console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                setTimeout(function() {alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
-                setTimeout(function() {nextQuestion();},1000);
+                setTimeout(function () {
+                    alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);
+                }, 600);
+                setTimeout(function () {
+                    nextQuestion();
+                }, 1000);
             }
-                   
-        });     
+
+        });
     };
 };
 /**
@@ -362,7 +370,7 @@ function nextQuestion() {
     /**
      * It prints the next question (if it is not the last one)
      */
-    if (currentPosition+1 < assignedQuestions.length) {
+    if (currentPosition + 1 < assignedQuestions.length) {
         questionScreen[0].innerHTML = `
             <div class="question-area">
                 <h1 class="question-number">Question ${currentPosition+1} of ${assignedQuestions.length}</h1>
@@ -379,11 +387,11 @@ function nextQuestion() {
 
         console.log(buttons); //control log of the buttons
         /**
-        * Adds event listeners to all the answer buttons
-        */
+         * Adds event listeners to all the answer buttons
+         */
         for (let button of buttons) {
-            button.addEventListener("click", function showCorrectAnswer(){
-            
+            button.addEventListener("click", function showCorrectAnswer() {
+
                 console.log(this.innerText); //control log of the selected answer
                 console.log(assignedQuestions[currentPosition].correctAnswer); //control log of the correct answer
                 /**
@@ -392,11 +400,15 @@ function nextQuestion() {
                 if (this.innerText === assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    setTimeout(function() {alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600)
-                    setTimeout(function() {nextQuestion();},1000);  
-                /**
-                 * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
-                 */
+                    setTimeout(function () {
+                        alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);
+                    }, 600)
+                    setTimeout(function () {
+                        nextQuestion();
+                    }, 1000);
+                    /**
+                     * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
+                     */
                 } else {
                     score = score - (100 / assignedQuestions.length);
                     this.style.backgroundColor = "#B1106B";
@@ -407,11 +419,15 @@ function nextQuestion() {
                         }
                     }
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    setTimeout(function() {alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
-                    setTimeout(function() {nextQuestion();},1000);
+                    setTimeout(function () {
+                        alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);
+                    }, 600);
+                    setTimeout(function () {
+                        nextQuestion();
+                    }, 1000);
                 }
-                    
-            });     
+
+            });
         };
 
     } else if (currentPosition + 1 >= assignedQuestions.length) {
@@ -430,13 +446,13 @@ function nextQuestion() {
         console.log(`question printed. Our current question is ${currentPosition+1}`); //control log
 
         console.log(buttons); //control log of the buttons
-    
+
         /**
-        * Adds event listeners to all the answer buttons
-        */
+         * Adds event listeners to all the answer buttons
+         */
         for (let button of buttons) {
-            button.addEventListener("click", function showCorrectAnswer(){
-            
+            button.addEventListener("click", function showCorrectAnswer() {
+
                 console.log(this.innerText); //control log of the selected answer
                 console.log(assignedQuestions[currentPosition].correctAnswer); //control log of the correct answer
                 /**
@@ -445,11 +461,15 @@ function nextQuestion() {
                 if (this.innerText == assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    setTimeout(function(){alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
-                    setTimeout(function(){finishGame();},1000);  
-                /**
-                 * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
-                 */
+                    setTimeout(function () {
+                        alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);
+                    }, 600);
+                    setTimeout(function () {
+                        finishGame();
+                    }, 1000);
+                    /**
+                     * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
+                     */
                 } else {
                     score = score - (100 / assignedQuestions.length);
                     this.style.backgroundColor = "#B1106B";
@@ -460,10 +480,14 @@ function nextQuestion() {
                         }
                     }
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    setTimeout(function(){alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
-                    setTimeout(function(){finishGame();},1000);
-                }      
-            });     
+                    setTimeout(function () {
+                        alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);
+                    }, 600);
+                    setTimeout(function () {
+                        finishGame();
+                    }, 1000);
+                }
+            });
         };
     };
 }
@@ -476,7 +500,7 @@ function finishGame() {
 
     let finalScreen = document.getElementsByClassName("final-area");
 
-    if(score>=60){
+    if (score >= 60) {
         finalScreen[0].innerHTML = `
             <div class="info-area">
                 <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
@@ -487,14 +511,14 @@ function finishGame() {
                 <div class="final-score">
                     <p>${score}%</p>
                 </div>
-                <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
-                    alt="astronaut-greeting">
+                <img class="welcome-image" href="index.html" src="assets/images/success.jpg"
+                    alt="man in nature raising hands">
                 
             </div>
             <div class="control-area">
                 <span class="finish"><a href="index.html">Finish</a></span>
             </div>`;
-    }else{
+    } else {
         finalScreen[0].innerHTML = `
             <div class="info-area">
                 <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
@@ -505,18 +529,18 @@ function finishGame() {
                 <div class="final-score">
                     <p>${score}%</p>
                 </div>
-                <img class="welcome-image" href="index.html" src="assets/images/austronaut-welcome-picture.jpg"
-                    alt="astronaut-greeting">
+                <img class="welcome-image" href="index.html" src="assets/images/fail.jpg"
+                    alt="long pathway">
                 
             </div>
             <div class="control-area">
                 <span class="finish"><a href="index.html">Finish</a></span>
             </div>`;
     }
-    
+
 
     document.getElementsByClassName("score-bar")[0].style.display = "none";
 
     console.log("Final screen appears");
-    
+
 }
