@@ -442,10 +442,10 @@ function nextQuestion() {
                 /**
                  * It paints of green the answer button if the answer is correct
                  */
-                if (this.value === assignedQuestions[currentPosition].correctAnswer) {
+                if (this.innerText === assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`)
+                    setTimeout(function(){alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},1000);
                     finishGame();  
                 /**
                  * It updates the score, paints in red the wrong selected answer and paints in green the correct answer

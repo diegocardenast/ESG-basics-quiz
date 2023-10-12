@@ -337,6 +337,7 @@ select {
 /* Footer */
 .footer {
     background-color: #ffffff;
+    margin-top: auto;
   }
   
   .social-networks {
@@ -345,13 +346,17 @@ select {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    border-top: solid 1px #CDDEF5;
+    background-color: #CDDEF5;
   }
   
-  .social-networks a {
-    font-size: 110%;
-    letter-spacing: 1px;
+  .social-networks > p {
+    font-size: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-decoration: none;
     color: #3C4043;
+    font-weight: bold;
   }
   
   .social-networks i {
