@@ -323,11 +323,11 @@ function checkAnswer() {
             /**
              * It paints of green the answer button if the answer is correct
              */
-            if (this.value === assignedQuestions[currentPosition].correctAnswer) {
+            if (this.innerText === assignedQuestions[currentPosition].correctAnswer) {
                 this.style.backgroundColor = "#6A971B";
                 console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`)
-                nextQuestion();  
+                setTimeout(function() {alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600)
+                setTimeout(function() {nextQuestion();},1000);  
             /**
              * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
              */
@@ -341,8 +341,8 @@ function checkAnswer() {
                     }
                 }
                 console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`)
-                nextQuestion();
+                setTimeout(function() {alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
+                setTimeout(function() {nextQuestion();},1000);
             }
                    
         });     
@@ -362,7 +362,7 @@ function nextQuestion() {
     /**
      * It prints the next question (if it is not the last one)
      */
-    if (currentPosition < assignedQuestions.length) {
+    if (currentPosition+1 < assignedQuestions.length) {
         questionScreen[0].innerHTML = `
             <div class="question-area">
                 <h1 class="question-number">Question ${currentPosition+1} of ${assignedQuestions.length}</h1>
@@ -389,11 +389,11 @@ function nextQuestion() {
                 /**
                  * It paints of green the answer button if the answer is correct
                  */
-                if (this.value === assignedQuestions[currentPosition].correctAnswer) {
+                if (this.innerText === assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`)
-                    nextQuestion();  
+                    setTimeout(function() {alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600)
+                    setTimeout(function() {nextQuestion();},1000);  
                 /**
                  * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
                  */
@@ -407,14 +407,14 @@ function nextQuestion() {
                         }
                     }
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`)
-                    nextQuestion();
+                    setTimeout(function() {alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
+                    setTimeout(function() {nextQuestion();},1000);
                 }
                     
             });     
         };
 
-    } else if (currentPosition + 1 === assignedQuestions.length) {
+    } else if (currentPosition + 1 >= assignedQuestions.length) {
         questionScreen[0].innerHTML = `
         <div class="question-area">
             <h1 class="question-number">Question ${currentPosition+1} of ${assignedQuestions.length}</h1>
@@ -442,11 +442,11 @@ function nextQuestion() {
                 /**
                  * It paints of green the answer button if the answer is correct
                  */
-                if (this.innerText === assignedQuestions[currentPosition].correctAnswer) {
+                if (this.innerText == assignedQuestions[currentPosition].correctAnswer) {
                     this.style.backgroundColor = "#6A971B";
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    setTimeout(function(){alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},1000);
-                    finishGame();  
+                    setTimeout(function(){alert(`Correct! The answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
+                    setTimeout(function(){finishGame();},1000);  
                 /**
                  * It updates the score, paints in red the wrong selected answer and paints in green the correct answer
                  */
@@ -460,8 +460,8 @@ function nextQuestion() {
                         }
                     }
                     console.log(`The correct answer is: ${assignedQuestions[currentPosition].correctAnswer}`); //control log of the correct answer
-                    alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`)
-                    finishGame();
+                    setTimeout(function(){alert(`Wrong! The correct answer is ${assignedQuestions[currentPosition].correctAnswer}`);},600);
+                    setTimeout(function(){finishGame();},1000);
                 }      
             });     
         };
@@ -476,13 +476,13 @@ function finishGame() {
 
     let finalScreen = document.getElementsByClassName("final-area");
 
-    if(score>=70){
+    if(score>=60){
         finalScreen[0].innerHTML = `
             <div class="info-area">
                 <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
-                <h1 class="index-title"><a href="index.html">Congratulations!</a></h1>
+                <h2 class="index-title"><a href="index.html">Congratulations!</a></h2>
                 
-                <p>You are becoming an ESG expert. You approved the quiz with a score of</p>
+                <p>You are becoming an ESG expert. You approved the quiz with a score of:</p>
                 <!-- Score -->
                 <div class="final-score">
                     <p>${score}%</p>
@@ -492,13 +492,13 @@ function finishGame() {
                 
             </div>
             <div class="control-area">
-                <span class="Finish">Finish</span>
+                <span class="finish"><a href="index.html">Finish</a></span>
             </div>`;
     }else{
         finalScreen[0].innerHTML = `
             <div class="info-area">
                 <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
-                <h1 class="index-title"><a href="index.html">That was close!</a></h1>
+                <h2 class="index-title"><a href="index.html">That was close!</a></h2>
                 
                 <p>It did not work this time :( Keep trying and you will master this test. Your score is</p>
                 <!-- Score -->
@@ -510,7 +510,7 @@ function finishGame() {
                 
             </div>
             <div class="control-area">
-                <span class="finish">Finish</span>
+                <span class="finish"><a href="index.html">Finish</a></span>
             </div>`;
     }
     
@@ -518,17 +518,5 @@ function finishGame() {
     document.getElementsByClassName("score-bar")[0].style.display = "none";
 
     console.log("Final screen appears");
-
-    let finishButton = document.getElementsByClassName("finish");
-
-    finishButton[0].addEventListener("click", function (){
-        window.location.href = "index.html";
-    });
-
     
-
-    
-
-    
-
 }

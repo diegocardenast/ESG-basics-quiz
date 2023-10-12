@@ -122,6 +122,9 @@ The live link can be found here - https://diegocardenast.github.io/project1-pers
 - The use of the icons was provided by [Flaticon](https://www.flaticon.com/free-icon/planet-earth_1598431?related_id=1598196&origin=search)
 - The resizing and conversion of icons was provided by [Favicon](https://favicon.io/favicon-converter/)
 - The welcome image was created by T Leish and taken from [Pexels](https://www.pexels.com/es-es/foto/astronauta-sosteniendo-la-tierra-5258243/)
+- The congratulations image was created by Julian Jagtenberg and taken from [Pexels](https://www.pexels.com/es-es/foto/hombre-vestido-con-camisa-gris-de-pie-sobre-una-superficie-elevada-103123/)
+- The fail image was created by Pixabay and taken from [Pexels](https://www.pexels.com/es-es/foto/camino-gris-entre-pastos-276299/)
+
 
 
 Thank You!
