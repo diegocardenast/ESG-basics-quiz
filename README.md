@@ -1,8 +1,8 @@
 # Project 2: ESG basics quiz
 
-ESG basics quiz is a web app that can teach to new colleagues in companies commited with the ESG Framework, how this one works and what it stands for. The web app allows you to select the number of questions, answer MCO questions and check right away the correct answer. At the end of the quiz, the user will receive the final score with an approved or Fail percentage.
+ESG basics quiz is a web app that can teach to new colleagues in companies commited with the ESG Framework, how this one works and what it stands for. The web app allows you to select the number of questions, answer multiple choice questions and check right away the correct answer. At the end of the quiz, the user will receive the final score with an approved or Fail percentage.
 
-![Responsive Mockup](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Am-I-Responsive-PP1-DiegoCardenas.png)
+![Responsive Mockup](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Am-I-Responsive-PP2-DiegoCardenas.png)
 
 
 ## User Stories

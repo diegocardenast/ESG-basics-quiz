@@ -143,7 +143,6 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-grow: 1;
-    overflow-y: scroll;
 }
 
 .game-area2 {
