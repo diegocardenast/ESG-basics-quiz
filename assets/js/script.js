@@ -513,7 +513,7 @@ function finishGame() {
                 <div class="final-score">
                     <p>${score}%</p>
                 </div>
-                <img class="welcome-image" href="index.html" src="assets/images/success.jpg"
+                <img class="welcome-image" src="assets/images/success.jpg"
                     alt="man in nature raising hands">
                 
             </div>
@@ -531,7 +531,7 @@ function finishGame() {
                 <div class="final-score">
                     <p>${score}%</p>
                 </div>
-                <img class="welcome-image" href="index.html" src="assets/images/fail.jpg"
+                <img class="welcome-image" src="assets/images/fail.jpg"
                     alt="long pathway">
                 
             </div>

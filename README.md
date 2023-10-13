@@ -67,7 +67,7 @@ __Game__
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?)
 - Lighthouse
   - The result given by the system for the lighthouse assessment is the following:
-![Lighthouse results](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Lighthouse-PP1-DiegoCardenas.png)
+![Lighthouse results](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/Lighthouse-PP2-DiegoCardenas.png)
 
 ### Unfixed Bugs
 
