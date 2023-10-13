@@ -40,10 +40,6 @@ let buttons;
  * Declaring score variable
  */
 let score = 100;
-/**
- * Declaring check answer control
- */
-let checkControl = 0;
 
 /**
  * It takes the amount of questions selected by user 

@@ -60,9 +60,10 @@ __Game__
 ### Validator Testing 
 
 - JavaScript
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+  - No errors were returned when passing through the official [JSHint validator](https://jshint.com/)
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
+  - One error related to invalid attributes for an img element was returned when passing the first time through the official [W3C validator](https://validator.w3.org/)
+  - No errors were returned when passing the second time through the official [W3C validator](https://validator.w3.org/)
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?)
 - Lighthouse
@@ -88,27 +89,19 @@ The live link can be found here - https://diegocardenast.github.io/ESG-basics-qu
 ### Content 
 
 - Good/Best practice on the readme were shared by Lauren-Nicole Popich in her [mentoring](https://github.com/CluelessBiker/mentoring/tree/main) GitHub repositry
-- The text for the Home page and the About was provided by the customer. In Spanish and then translated into English using [DeepL](https://www.deepl.com/de/translator#es/en) 
-- Use of stackoverflow to insert a line break inside the [mailto feature](https://stackoverflow.com/questions/22765834/insert-a-line-break-in-mailto-body)
 - Mailto tutorial provided by [Simplilearn](https://www.simplilearn.com/tutorials/html-tutorial/html-mailto)
-- Colors Palette Generated with [coolors.co](https://coolors.co/) using as base the HEX color (#1875a0)  provided by the customer on this page
-- Use of leadmonk to create the [email template (template 21)](https://www.leadmonk.io/post/14-email-templates-to-ask-for-a-meeting-politely) for the mailto feature
 - Use of Google to import [Google fonts](https://fonts.google.com/?classification=Display) 
-- Creation of a transparency of the color pallette using [hexcolortool.com](https://www.hexcolortool.com/#ff42ad,0.5)
-- Inspiration of content and structure seen inside the [Code Institute Love Running Project](https://diegocardenast.github.io/Love-running-ci/index.html) and the page of [Maggie Edwards](https://maggieedwards.com/)
-- 
+- Inspiration of color palette and geometries can be checked in [Google Store](https://store.google.com/de/?hl=de)
 
 ### Media
 
-- The photos used on the home and about were provided directly by the customer (All rights reserved)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The icons in the header and contact were taken from [Font Awesome](https://fontawesome.com/)
 - The use of the icons was provided by [Flaticon](https://www.flaticon.com/free-icon/planet-earth_1598431?related_id=1598196&origin=search)
 - The resizing and conversion of icons was provided by [Favicon](https://favicon.io/favicon-converter/)
-- The welcome image was created by T Leish and taken from [Pexels](https://www.pexels.com/es-es/foto/astronauta-sosteniendo-la-tierra-5258243/)
+- The welcome image was created by Alena Koval and taken from [Pexels](https://www.pexels.com/es-es/foto/la-mano-izquierda-de-la-persona-sosteniendo-una-planta-de-hoja-verde-886521/)
 - The congratulations image was created by Julian Jagtenberg and taken from [Pexels](https://www.pexels.com/es-es/foto/hombre-vestido-con-camisa-gris-de-pie-sobre-una-superficie-elevada-103123/)
 - The fail image was created by Pixabay and taken from [Pexels](https://www.pexels.com/es-es/foto/camino-gris-entre-pastos-276299/)
-Foto de Alena Koval: https://www.pexels.com/es-es/foto/la-mano-izquierda-de-la-persona-sosteniendo-una-planta-de-hoja-verde-886521/
-Foto de Yan Krukau: https://www.pexels.com/es-es/foto/oficina-feliz-sonriente-diversidad-8867482/
+- The contact image was created by Yan Krukan and taken from [Pexels](https://www.pexels.com/es-es/foto/oficina-feliz-sonriente-diversidad-8867482/)
 
 
 Thank You!
