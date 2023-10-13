@@ -2,31 +2,23 @@
 
 ESG basics quiz is a web app that can teach to new colleagues in companies commited with the ESG Framework, how this one works and what it stands for. The web app allows you to select the number of questions, answer multiple choice questions and check right away the correct answer. At the end of the quiz, the user will receive the final score with an approved or Fail percentage.
 
-![Responsive Mockup](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Am-I-Responsive-PP2-DiegoCardenas.png)
+![Responsive Mockup](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/Am-I-Responsive-PP2-DiegoCardenas.png)
 
 
 ## User Stories
-- As a **user** I want to **view the about page** so that I can **learn more about the coach**
-- As a **user** I want to **navigate the page** so that I can **see more information about the coach**
-- As a **user** I want to **see a picture of the coach** so that I can **feel closer to the person that will provide me support**
-- As a **user** I want to **see some certificates of the coach** so that I can **feel more confident of his knowledge**
-- As a **user** I want to **have access to his linked-in profile** so that I can **see his publications**
-- As a **user** I want to **fill out a contact form** so that I can **get contacted by the coach**
-- As a **user** I want to **see a confirmation message** so that I can **make sure that my contact form has been received**
+- As a **user** I want to **view the Game page** so that I can **click and start the game anytime**
+- As a **user** I want to **navigate the web app** so that I can **see more information about the game**
+- As a **user** I want to **select the number of questions** so that I can **dedicate the time I have available**
+- As a **user** I want to **have a contact page** so that I can **contact support anytime**
+- As a **user** I want to **know if my answer was correct** so that I can **improve my knowledge on ESG**
+- As a **user** I want to **know my final score** so that I can **make sure that I passed or failed the quiz**
 
 ## Wireframes
 
-__Home__  
+__Game__  
 
-![Landing Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/wireframe_home.png)
+![Game](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/wireframes-PP2-DiegoCardenas.png)
 
-__About__  
-
-![About Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/wireframe-about.png)
-
-__Contact__  
-
-![Contact Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/wireframe_contact.png)
 
 ## Features
 
@@ -34,39 +26,30 @@ __Contact__
 
 - __Navigation Bar__
 
-  - Featured on all three pages, the full responsive navigation bar includes links to the Home page, About and Contact page and is identical in each page to allow for easy navigation.
+  - The full responsive navigation bar includes links to the Game page, Instructions and Contact page, and is identical in each page to allow for easy navigation.
   - This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
 
-![Navigation Bar](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/NavigationBar-PP1-DiegoCardenas.png)
+![Navigation Bar](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/navigation-bar1-PP2.png)
 
-![Navigation Bar For Mobile](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/NavigationBarForMobile-PP1-DiegoCardenas.png)
+![Navigation Bar For Mobile](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/navigation-bar2-PP2.png)
 
-- __The landing page image__
+- __Score and questions counter__
 
-  - The landing includes a photograph with text overlay to allow the user to watch one conference of the coach. 
-  - This section introduces the user to Giovanni Sanchez with a nice intro message.
+  - The score and questions counter allow the users to know in which part of the game they are and their current score.
 
-![Landing Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/LandingPage-PP1-DiegoCardenas.png)
+![Score and Question counter](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/score-question-counter-PP2.png)
 
-- __About page__
+- __Colors for correct and wrong answers__
 
-  - This page allows users to learn more about Giovanni and his certifications  
+  - This feature marks as green the correct answer and as red any wrong selected answer.  
 
-![About Page](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/About-PP1-DiegoCardenas.png)
+![Correct and Wrong answer](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/colors-PP2.png)
 
-- __Contact Form__
+- __Instructions__
 
-  - This page will allow the user to send a contact form directly to the coach. The user will be asked to submit their full name and email address.  
+  - This page will allow the user to understand how to play the game.  
 
-![Contact Form](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Bug-PP1-DiegoCardenas.png)
-
-- __The Footer__ 
-
-  - The footer section includes links to LinkedIN and a mailto feature to send a direct message to Giovanni. The links will open to a new tab to allow easy navigation for the user. 
-  - The footer is valuable to the user as it encourages them to keep connected via social media.
-
-![Footer](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/FooterWithContactInformation-PP1-DiegoCardenas.png)
-
+![Instructions](https://github.com/diegocardenast/ESG-basics-quiz/blob/main/assets/images/Instructions-game-PP2.png)
 
 ### Features Left to Implement
 
@@ -76,6 +59,8 @@ __Contact__
 
 ### Validator Testing 
 
+- JavaScript
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/)
 - CSS
@@ -86,9 +71,7 @@ __Contact__
 
 ### Unfixed Bugs
 
-- Inside the contact section, there are white areas on top and bottom of the background image. The idea is to fix it so that it can cover the whole area. This happens specially with mobile devices with a very considerable height (670px and more) 
-
-![Contact Form BUG](https://github.com/diegocardenast/project1-personal-coach/blob/main/assets/images/Bug-PP1-DiegoCardenas.png)
+- NA
 
 ## Deployment 
 
@@ -97,7 +80,7 @@ __Contact__
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - https://diegocardenast.github.io/project1-personal-coach/
+The live link can be found here - https://diegocardenast.github.io/ESG-basics-quiz/
 
 
 ## Credits
