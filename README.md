@@ -92,6 +92,7 @@ The live link can be found here - https://diegocardenast.github.io/ESG-basics-qu
 - Mailto tutorial provided by [Simplilearn](https://www.simplilearn.com/tutorials/html-tutorial/html-mailto)
 - Use of Google to import [Google fonts](https://fonts.google.com/?classification=Display) 
 - Inspiration of color palette and geometries can be checked in [Google Store](https://store.google.com/de/?hl=de)
+- The questions were created with the AI of [chatGPT](https://chat.openai.com/)
 
 ### Media
 
