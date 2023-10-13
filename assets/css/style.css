@@ -398,22 +398,26 @@ select {
 }
 
 
-
-
-
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
-
 
     /* Navigation bar */
     .header {
         padding: 1%;
+        padding-top: 2%;
     }
 
     .header .logo {
         font-size: 100%;
         line-height: 75px;
         margin: 0 0.5rem;
+        height: 60px;
+        padding-right: 2rem;
+    }
+
+    .score-bar > p {
+        margin-top: 0px;
+        margin-bottom: 1em;
     }
 
     .navigation-bar {
@@ -422,7 +426,7 @@ select {
         position: relative;
         box-shadow: none;
         width: fit-content;
-        padding-right: 1rem;
+        padding-left: 2rem;
     }
 
     .navigation-bar>a {
@@ -434,12 +438,109 @@ select {
     .nav-toggle-label {
         display: none;
     }
+
+    /* Game section */
+    .control-area {
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }
+
+    .welcome-image {
+        width: 60%;
+        height: 60%;
+    }
+
+    .info-area{
+        margin-bottom: 0px;
+    }
+
+    .info-area > p {
+        margin-top: 5%;
+    }
+
+    /* Instructions section */
+    #instructions{
+        max-height: 31em;
+    }
+
+    #instructions3{
+        margin-bottom: 10px;
+    }
+
+    /* Contact section */
+    #email{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
 }
 
 /* Media query: laptops and larger (992px and up) */
 @media screen and (min-width: 992px) {
+    
+    /* General */
+    main{
+        padding: 3%;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    /* Header */
+
     .navigation-bar a:hover {
         border-bottom: 1px solid #1967D2;
+    }
+
+
+    /* Game section */
+    .start-button{
+        padding: 2% 3% 2% 3%;
+    }
+
+    .welcome-image{
+        width: 35%;
+        height: 35%;
+    }
+
+    .info-area > p {
+        margin-top: 2%;
+    }
+
+    select{
+        font-size: large;
+    }
+
+    .control-area{
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .go-button{
+        padding: 2% 3% 2% 3%;
+    }
+
+    .answer-option{
+        padding: 1% 2% 1% 2%;
+        font-size: large;
+    }
+
+    /* Instructions section */
+    #instructions{
+        max-height: 36em;
+    }
+
+    /* Finish section */
+    .finish{
+        padding: 2% 3% 2% 3%;
+    }
+
+    /* Footer */
+    .social-networks {
+        padding: 1%;
+    }
+    .social-networks>p {
+        font-size: large;
     }
 
 }

@@ -366,7 +366,9 @@ function nextQuestion() {
     let questionScreen = document.getElementsByClassName("game-questions-area");
     //Score updates on screen
     document.getElementsByClassName("score-bar")[0].innerText = `Score: ${score}%`;
-
+    document.getElementsByClassName("score-bar")[0].style.fontWeight = "bold";
+    document.getElementsByClassName("score-bar")[0].style.fontSize = "medium";
+    document.getElementsByClassName("score-bar")[0].style.marginBottom = "1em";
     /**
      * It prints the next question (if it is not the last one)
      */
@@ -524,7 +526,7 @@ function finishGame() {
                 <h1 class="index-title"><a href="index.html">ESG Quiz</a></h1>
                 <h2 class="index-title"><a href="index.html">That was close!</a></h2>
                 
-                <p>It did not work this time :( Keep trying and you will master this test. Your score is</p>
+                <p>It did not work this time :( Keep trying and you will master this test. Your score is:</p>
                 <!-- Score -->
                 <div class="final-score">
                     <p>${score}%</p>
